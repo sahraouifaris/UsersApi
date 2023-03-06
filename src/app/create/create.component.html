@@ -1,0 +1,48 @@
+<form [formGroup]="studentsForm" class="form-group col-6 mx-5 my-2">
+    <div class="form-group">
+      <label for="recipient-name" class="col-form-label">First Name</label>
+      <input type="text" class="form-control" placeholder="First Name" formControlName="firstname">
+    </div>
+    <div *ngIf="studentsForm.controls['firstname'].invalid && (studentsForm.controls['firstname'].dirty || studentsForm.controls['firstname'].touched)|| submitted ==false" >
+      <div *ngIf="studentsForm.controls['firstname'].errors " class="alert alert-danger">
+        First Name is required.
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="message-text" class="col-form-label">Last Name</label>
+      <input type="text" class="form-control" placeholder="Last Name" formControlName="lastname">
+    </div>
+    <div *ngIf="studentsForm.controls['lastname'].invalid && (studentsForm.controls['lastname'].dirty || studentsForm.controls['lastname'].touched) || submitted ==false ">
+      <div  class="alert alert-danger" *ngIf="studentsForm.controls['lastname'].errors">
+        Last Name is required.
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="recipient-name" class="col-form-label">User Name</label>
+      <input type="text" class="form-control" formControlName="username" id="recipient-name">
+    </div>
+    <div *ngIf="studentsForm.controls['username'].invalid && (studentsForm.controls['username'].dirty || studentsForm.controls['username'].touched)|| submitted ==false">
+      <div   class="alert alert-danger" *ngIf="studentsForm.controls['username'].errors">
+        UserName is required.
+    </div>
+    </div>
+    <div class="form-group">
+        <label for="recipient-name" class="col-form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email" id="recipient-name">
+      </div>
+      <div *ngIf="studentsForm.controls['email'].invalid && (studentsForm.controls['email'].dirty || studentsForm.controls['email'].touched|| submitted ==false)" class="alert alert-danger">
+        <div *ngIf="studentsForm.controls['email'].errors">
+Email is required.     </div>
+      </div>
+    <div class="form-group">
+      <label for="recipient-name" class="col-form-label">Imagen (URL)</label>
+      <input type="text" class="form-control" formControlName="image" id="recipient-name">
+    </div>
+    <div *ngIf="studentsForm.controls['image'].invalid && (studentsForm.controls['image'].dirty || studentsForm.controls['image'].touched|| submitted ==false)" class="alert alert-danger">
+      <div *ngIf="studentsForm.controls['image'].errors">
+        Imagen (URL) is required.
+    </div>
+    </div>
+    <br>  
+    <button type="button" class="btn btn-primary"  (click)="addStudent()">Add</button>
+  </form>

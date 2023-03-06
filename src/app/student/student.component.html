@@ -1,0 +1,23 @@
+<div class="container-fluid g-0 p-2">
+    <div class="row g-0">
+    </div>
+</div>
+        <div class="thumbnail card">
+            <div class="img-event">
+                <img class="group list-group-image img-fluid rounded" src="{{student.image}}"    alt="" />
+            </div>
+            <div class="caption card-body">
+                <h4 class="group card-title inner list-group-item-heading">
+                 {{student.first_name | titlecase}} {{student.last_name | titlecase}}</h4>
+
+            </div>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" (click)="detailStudentClicked(student._id)" class="btn btn-warning">Dtail</button>
+                <button type="button"(click)="editStudentClicked(student._id)"  class="btn btn-success">Actualizar</button>
+                <button type="button" (click)="deleteStudentClicked(student._id)"  class="btn btn-danger">Delete</button>
+              </div>
+              <br>
+        </div>
+   
+
+    

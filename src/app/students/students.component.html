@@ -1,0 +1,28 @@
+<main class="black-borde">
+
+    <!-- TOOBAR TO ADD AND SEARCH StudentS -->
+    <div class="toolbar">
+
+      <div class="col-5 search-employees">
+        <input type="text" class="form-control" placeholder="Search Users"
+          (input)="searchStudents(searchInput.value)" #searchInput>
+      </div>
+
+    </div>
+
+    <!-- AREA TO DISPLAY ALL THE StudentS -->
+    <div class="container d-flex flex-wrap align-items-center">
+      <div class="row mt-5" *ngIf="students.length == 0">
+        <div class="col text-center">
+          <span class="text-secondary fs-2 fw-bold fst-italic">There are No Users Added!</span>
+        </div>
+      </div>
+
+        <div class="row">
+  
+      <div class="col-3" *ngFor="let std of studentsToDisplay; let ei = index;">
+          <app-student [student]="std" ></app-student>        
+      </div>
+    </div>
+    </div>
+  </main>
